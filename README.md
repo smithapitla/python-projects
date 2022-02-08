@@ -4,3 +4,4 @@
 2. SumOfEvenFibonacci
 3. LargestPrimeFactor
 4. LargestPalindrome
+5. SmallestMultiple
