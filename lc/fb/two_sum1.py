@@ -1,24 +1,25 @@
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution(object):
-    def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
-        nums = [2,7,11,15]
-        target = 9
-        nums_map = {}
-        for i in range (0, len(nums)):
-            nums_map[nums[i]] = i
+def two_sum(nums, target):
+    nums_map = {}
+    for i in range (0, len(nums)):
+        nums_map[nums[i]] = i
+    # print(nums_map)
+    for i in range (0, len(nums)):
+        match = target - nums[i]
+        if(match in nums_map):
+            if(i != nums_map[match]):
+                return [i, nums_map[match]]
+    return nums_map
 
-        for i in range (0, len(nums)):
-            x = target - nums[i]
-            if(x in nums_map):
-                return [i, nums_map[x]]
-        return nums_map
-        
+nums = [2,7,11,15]
+target = 9
+print(two_sum(nums, target))
+
+
+nums = [3,2,4]
+target = 6
+print(two_sum(nums, target))
+
+nums = [3,3]
+target = 6
+print(two_sum(nums, target))
+                  
